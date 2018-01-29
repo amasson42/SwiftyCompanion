@@ -12,6 +12,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SwiftyCompanionAPI.shared.connect() { success in
+            if success {
+                SwiftyCompanionAPI.shared.getUserInfos(name: "acarotin") { json in
+                    if let j = json {
+                        print(j)
+                    } else {
+                        print("Nothing")
+                    }
+                }
+            } else {
+                print("FALSE")
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

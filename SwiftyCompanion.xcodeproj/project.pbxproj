@@ -11,6 +11,8 @@
 		64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */; };
 		64E80872201F6A9000373B84 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80871201F6A9000373B84 /* JSONReader.swift */; };
 		64E80875201F6ABF00373B84 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80874201F6ABF00373B84 /* Student.swift */; };
+		F665AC53201F6C6C00462B16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC52201F6C6C00462B16 /* SearchViewController.swift */; };
+		F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC59201F710000462B16 /* StudentProfileView.swift */; };
 		F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851A201F597800F479D9 /* AppDelegate.swift */; };
 		F6DF851D201F597800F479D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851C201F597800F479D9 /* ViewController.swift */; };
 		F6DF8520201F597800F479D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6DF851E201F597800F479D9 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionAPI.swift; sourceTree = "<group>"; };
 		64E80871201F6A9000373B84 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
 		64E80874201F6ABF00373B84 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		F665AC52201F6C6C00462B16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F665AC59201F710000462B16 /* StudentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileView.swift; sourceTree = "<group>"; };
 		F6DF8517201F597800F479D9 /* SwiftyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DF851A201F597800F479D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6DF851C201F597800F479D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,13 +58,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		64E80869201F5AFF00373B84 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		64E8086A201F5B0B00373B84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				F6DF851C201F597800F479D9 /* ViewController.swift */,
+				F665AC52201F6C6C00462B16 /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -83,6 +81,14 @@
 				64E80871201F6A9000373B84 /* JSONReader.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F665AC58201F70E900462B16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F665AC59201F710000462B16 /* StudentProfileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F6DF850E201F597800F479D9 = {
@@ -107,7 +113,7 @@
 				64E8086C201F5B1F00373B84 /* Extensions */,
 				64E8086B201F5B1500373B84 /* Controllers */,
 				64E8086A201F5B0B00373B84 /* Models */,
-				64E80869201F5AFF00373B84 /* Views */,
+				F665AC58201F70E900462B16 /* Views */,
 				64E80868201F5AF500373B84 /* API */,
 				F6DF851A201F597800F479D9 /* AppDelegate.swift */,
 				F6DF851E201F597800F479D9 /* Main.storyboard */,
@@ -193,10 +199,12 @@
 			files = (
 				F6DF8523201F597800F479D9 /* SwiftyCompanion.xcdatamodeld in Sources */,
 				F6DF851D201F597800F479D9 /* ViewController.swift in Sources */,
+				F665AC53201F6C6C00462B16 /* SearchViewController.swift in Sources */,
 				64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */,
 				64E8086E201F5C8B00373B84 /* HTTPClient.swift in Sources */,
 				64E80872201F6A9000373B84 /* JSONReader.swift in Sources */,
 				64E80875201F6ABF00373B84 /* Student.swift in Sources */,
+				F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */,
 				F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftyCompanion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = giantwow.SwiftyCompanion;
@@ -349,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftyCompanion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = giantwow.SwiftyCompanion;

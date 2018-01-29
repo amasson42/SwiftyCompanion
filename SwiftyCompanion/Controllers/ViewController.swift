@@ -17,7 +17,7 @@ class ViewController: UIViewController {
             if success {
                 SwiftyCompanionAPI.shared.getUserInfos(name: "acarotin") { json in
                     if let j = json {
-                        print(j)
+                        Student(json: j)
                     } else {
                         print("Nothing")
                     }

@@ -37,6 +37,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64E80868201F5AF500373B84 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		64E80869201F5AFF00373B84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64E8086A201F5B0B00373B84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		64E8086B201F5B1500373B84 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		64E8086C201F5B1F00373B84 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F6DF850E201F597800F479D9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +91,11 @@
 		F6DF8519201F597800F479D9 /* SwiftyCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				64E8086C201F5B1F00373B84 /* Extensions */,
+				64E8086B201F5B1500373B84 /* Controllers */,
+				64E8086A201F5B0B00373B84 /* Models */,
+				64E80869201F5AFF00373B84 /* Views */,
+				64E80868201F5AF500373B84 /* API */,
 				F6DF851A201F597800F479D9 /* AppDelegate.swift */,
 				F6DF851C201F597800F479D9 /* ViewController.swift */,
 				F6DF851E201F597800F479D9 /* Main.storyboard */,

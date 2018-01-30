@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="708" y="116.49175412293854"/>
         </scene>
-        <!--Student View Controller-->
+        <!--login-->
         <scene sceneID="L1h-5B-se4">
             <objects>
                 <viewController id="jrO-DW-gvX" customClass="StudentViewController" customModule="SwiftyCompanion" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-8Y-Fc3">
                                         <rect key="frame" x="8" y="8" width="359" height="164"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="afe-fI-pKm">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="afe-fI-pKm" customClass="WebImageView" customModule="SwiftyCompanion" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="131" height="164"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="afe-fI-pKm" secondAttribute="height" multiplier="4:5" id="XKe-C8-H65"/>
@@ -128,7 +128,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jpU-2x-4Sl">
                                                 <rect key="frame" x="141" y="0.0" width="218" height="164"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iok-LE-LX1">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iok-LE-LX1">
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -209,8 +209,8 @@
                                     <outlet property="coalitionRankLabel" destination="2WY-XI-BTH" id="kQd-rN-Da7"/>
                                     <outlet property="correctionPointsLabel" destination="16y-3D-AeA" id="HtW-Mb-cxb"/>
                                     <outlet property="logedPostLabel" destination="WQV-Be-FWP" id="3PA-8V-veJ"/>
-                                    <outlet property="loginLabel" destination="iok-LE-LX1" id="CGj-5X-NKb"/>
                                     <outlet property="mailLabel" destination="OQz-oQ-3Ym" id="crE-Uq-iGI"/>
+                                    <outlet property="nameLabel" destination="iok-LE-LX1" id="agK-zA-ois"/>
                                     <outlet property="phoneLabel" destination="Wqf-HF-aCL" id="bog-wC-kOV"/>
                                     <outlet property="profileImageView" destination="afe-fI-pKm" id="al6-vq-ked"/>
                                     <outlet property="walletsLabel" destination="Gav-OW-BCb" id="D5r-f2-qJO"/>
@@ -258,8 +258,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fn3-3n-cJI"/>
                     </view>
+                    <navigationItem key="navigationItem" title="login" id="7o5-tS-kLC"/>
                     <connections>
                         <outlet property="headerProfileView" destination="HFa-9D-qf4" id="nWW-ec-jLs"/>
+                        <outlet property="navigationHeader" destination="7o5-tS-kLC" id="0z7-U7-Cs5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtw-VS-ZAb" userLabel="First Responder" sceneMemberID="firstResponder"/>

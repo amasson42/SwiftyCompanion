@@ -11,6 +11,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var loginView: LoginView!
+    var student: Student?
     
     override func viewDidLoad() {
         
@@ -50,16 +51,29 @@ class SearchViewController: UIViewController {
         }
         self.loginView.state = .searching
         SwiftyCompanionAPI.shared.getUserInfos(name: login) {
-            (_) in
+            (json) in
             DispatchQueue.main.async {
                 self.loginView.state = .ready
-                self.performSegue(withIdentifier: "SearchStudentSegue", sender: sender)
+            }
+            guard let json = json else {
+                // TODO: - handle student not found
+                return
+            }
+            if let student = Student(json: json) {
+                self.student = student
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "SearchStudentSegue", sender: sender)
+                }
+            } else {
+                // TODO: - handle wrong student
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let target = segue.destination as? StudentViewController {
+            target.student = self.student
+        }
     }
     
 }
@@ -71,4 +85,5 @@ extension SearchViewController: UITextFieldDelegate {
         self.startSearch(textField)
         return true
     }
+    
 }

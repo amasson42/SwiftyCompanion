@@ -11,21 +11,28 @@ import UIKit
 class StudentViewController: UIViewController {
     
     @IBOutlet weak var headerProfileView: StudentProfileView!
+    @IBOutlet weak var navigationHeader: UINavigationItem!
+    var student: Student?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        headerProfileView.takeValuesFromStudent(student: nil)
+        if let student = self.student {
+            navigationHeader.title = student.login
+            headerProfileView.takeValuesFromStudent(student: student)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }

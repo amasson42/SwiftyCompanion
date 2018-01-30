@@ -11,8 +11,8 @@ import UIKit
 class StudentProfileView: UIView {
     
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var profileImageView: WebImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var walletsLabel: UILabel!
@@ -21,15 +21,17 @@ class StudentProfileView: UIView {
     @IBOutlet weak var coalitionRankLabel: UILabel!
     @IBOutlet weak var logedPostLabel: UILabel!
     
-    func takeValuesFromStudent(student: Any?) {
-        self.profileImageView.image = #imageLiteral(resourceName: "empty")
-        self.loginLabel.text = "amasson"
-        self.mailLabel.text = "amasson@student.42.fr"
-        self.phoneLabel.text = "phone: +33646882325"
-        self.walletsLabel.text = "wallets: 12"
-        self.correctionPointsLabel.text = "corrections points: 15"
+    func takeValuesFromStudent(student: Student) {
+        self.profileImageView.imageUrl = student.profile_image_url
+        self.profileImageView.reloadImage()
+        self.nameLabel.text = student.displayname
+        self.mailLabel.text = "mail: \(student.email)"
+        self.phoneLabel.text = "phone: \(student.phone)"
+        print(student.wallet)
+        self.walletsLabel.text = "wallets: \(student.wallet)"
+        self.correctionPointsLabel.text = "corrections points: \(student.correction_points)"
         self.coalitionPointsLabel.text = "coalition: 104 points"
         self.coalitionRankLabel.text = "rank: 60"
-        self.logedPostLabel.text = "Unavailable"
+        self.logedPostLabel.text = "\(student.location)"
     }
 }

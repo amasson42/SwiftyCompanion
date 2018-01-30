@@ -15,9 +15,12 @@ class ViewController: UIViewController {
         
         SwiftyCompanionAPI.shared.connect() { success in
             if success {
-                SwiftyCompanionAPI.shared.getUserInfos(name: "acarotin") { json in
+                SwiftyCompanionAPI.shared.getUserInfos(name: "jmonfron") { json in
                     if let j = json {
-                        Student(json: j)
+                        if let student = Student(json: j) {
+                            dump(student.cursus)
+                            //print("DUDE")
+                        }
                     } else {
                         print("Nothing")
                     }

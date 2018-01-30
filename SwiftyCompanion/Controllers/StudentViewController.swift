@@ -10,8 +10,10 @@ import UIKit
 
 class StudentViewController: UIViewController {
     
-    @IBOutlet weak var headerProfileView: StudentProfileView!
     @IBOutlet weak var navigationHeader: UINavigationItem!
+    @IBOutlet weak var headerProfileView: StudentProfileView!
+    @IBOutlet weak var cursusView: CursusView!
+    
     var student: Student?
     
     override func viewDidLoad() {
@@ -20,6 +22,7 @@ class StudentViewController: UIViewController {
         if let student = self.student {
             navigationHeader.title = student.login
             headerProfileView.takeValuesFromStudent(student: student)
+            cursusView.student = student
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -37,4 +40,5 @@ class StudentViewController: UIViewController {
         
     }
 
+    @IBOutlet weak var seeProjectsButton: UIButton!
 }

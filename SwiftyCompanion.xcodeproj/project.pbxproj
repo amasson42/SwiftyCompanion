@@ -18,6 +18,7 @@
 		F65FB51420209977004FCDD9 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB51320209977004FCDD9 /* StudentViewController.swift */; };
 		F65FB5162020A167004FCDD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5152020A167004FCDD9 /* LoginView.swift */; };
 		F65FB5182020B5AA004FCDD9 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5172020B5AA004FCDD9 /* WebImageView.swift */; };
+		F65FB51A2020CAB3004FCDD9 /* CursusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5192020CAB3004FCDD9 /* CursusView.swift */; };
 		F665AC53201F6C6C00462B16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC52201F6C6C00462B16 /* SearchViewController.swift */; };
 		F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC59201F710000462B16 /* StudentProfileView.swift */; };
 		F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851A201F597800F479D9 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 		F65FB51320209977004FCDD9 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		F65FB5152020A167004FCDD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F65FB5172020B5AA004FCDD9 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		F65FB5192020CAB3004FCDD9 /* CursusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursusView.swift; sourceTree = "<group>"; };
 		F665AC52201F6C6C00462B16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F665AC59201F710000462B16 /* StudentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileView.swift; sourceTree = "<group>"; };
 		F6DF8517201F597800F479D9 /* SwiftyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				F665AC59201F710000462B16 /* StudentProfileView.swift */,
 				F65FB5152020A167004FCDD9 /* LoginView.swift */,
 				F65FB5172020B5AA004FCDD9 /* WebImageView.swift */,
+				F65FB5192020CAB3004FCDD9 /* CursusView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				F65FB51420209977004FCDD9 /* StudentViewController.swift in Sources */,
 				F6DF8523201F597800F479D9 /* SwiftyCompanion.xcdatamodeld in Sources */,
+				F65FB51A2020CAB3004FCDD9 /* CursusView.swift in Sources */,
 				F6DF851D201F597800F479D9 /* ViewController.swift in Sources */,
 				F665AC53201F6C6C00462B16 /* SearchViewController.swift in Sources */,
 				64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */,

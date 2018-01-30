@@ -135,6 +135,60 @@ class HTTPClient {
         }
     }
     
+    func getExpertise(id: String, completion: @escaping (_ json: [String : Any]?) -> Void) {
+        if let url = URL(string: "\(self.url42)/v2/expertises/\(id)") {
+            var request = URLRequest(url: url)
+            if let token = self.access_token {
+                request.httpMethod = "GET"
+                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                let task = URLSession.shared.dataTask(with: request) {
+                    (data, response, error) in
+                    if error != nil {
+                        print("Error:", error!)
+                    } else if let d = data {
+                        do {
+                            if let json = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String : Any] {
+                                completion(json)
+                            }
+                        } catch ( _) {
+                            completion(nil)
+                        }
+                    }
+                }
+                task.resume()
+            }
+        } else {
+            completion(nil)
+        }
+    }
+    
+    func getCoalition(user_id: String, completion: @escaping (_ json: [String : Any]?) -> Void) {
+        if let url = URL(string: "\(self.url42)/v2/users/\(user_id)/coalitions") {
+            var request = URLRequest(url: url)
+            if let token = self.access_token {
+                request.httpMethod = "GET"
+                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                let task = URLSession.shared.dataTask(with: request) {
+                    (data, response, error) in
+                    if error != nil {
+                        print("Error:", error!)
+                    } else if let d = data {
+                        do {
+                            if let json = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String : Any] {
+                                completion(json)
+                            }
+                        } catch ( _) {
+                            completion(nil)
+                        }
+                    }
+                }
+                task.resume()
+            }
+        } else {
+            completion(nil)
+        }
+    }
+
 //    func getWeather(city : String, completion: @escaping (_ json: [String : Any]?) -> Void) {
 //        let url = URL(string: "\(openWeatherMapURLCurrent)?APPID=\(openWeatherMapAPIKey)&q=\(city)&units=metric")!
 //

@@ -58,6 +58,18 @@ final class SwiftyCompanionAPI {
         }
     }
     
+    func getExpertise(id: String, completion: @escaping (_ json: [String:Any]?) -> Void) {
+        httpClient.getExpertise(id: id) { json in
+            completion(json)
+        }
+    }
+    
+    func getCoalition(user_id: String, completion: @escaping (_ json: [String:Any]?) -> Void) {
+        httpClient.getCoalition(user_id: user_id) { json in
+            completion(json)
+        }
+    }
+    
 //    @objc func downloadImage(with notification: Notification) {
 //        guard let userInfo = notification.userInfo,
 //            let imageView = userInfo["iconView"] as? UIImageView,

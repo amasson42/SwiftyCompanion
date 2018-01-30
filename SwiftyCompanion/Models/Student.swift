@@ -8,12 +8,7 @@
 
 import Foundation
 
-class Student: CustomStringConvertible {
-    var description: String {
-        
-        return "\(dump(self))"
-        
-    }
+class Student {
     
     private var _firstname: String?
     private var _lastname: String?
@@ -31,7 +26,9 @@ class Student: CustomStringConvertible {
     
     init?(json: [String: Any]) {
         
-        print(json)
+        if json.count == 0 {
+            return nil
+        }
         
         let json = JSONObject(json: json)
         
@@ -155,7 +152,7 @@ class Student: CustomStringConvertible {
             }
             
         }
-        
+    
     }
     
     func appendProjectToCursus(cursus : [Cursus], project: Project) {

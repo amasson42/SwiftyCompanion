@@ -8,9 +8,9 @@
 
 import Foundation
 
-indirect enum JsonObject {
-    case dictionnary([String: JsonObject])
-    case array([JsonObject])
+indirect enum JSONObject {
+    case dictionnary([String: JSONObject])
+    case array([JSONObject])
     case string(String)
     case integer(Int)
     case float(Double)
@@ -18,15 +18,15 @@ indirect enum JsonObject {
     
     init(json: Any) {
         if let dictionnary = json as? [String: Any] {
-            var d: [String: JsonObject] = [:]
+            var d: [String: JSONObject] = [:]
             for (key, value) in dictionnary {
-                d[key] = JsonObject(json: value)
+                d[key] = JSONObject(json: value)
             }
             self = .dictionnary(d)
         } else if let array = json as? [Any] {
-            var a: [JsonObject] = []
+            var a: [JSONObject] = []
             for value in array {
-                a.append(JsonObject(json: value))
+                a.append(JSONObject(json: value))
             }
             self = .array(a)
         } else if let string = json as? String {
@@ -40,14 +40,14 @@ indirect enum JsonObject {
         }
     }
     
-    subscript(key: String) -> JsonObject? {
+    subscript(key: String) -> JSONObject? {
         if case let .dictionnary(d) = self {
             return d[key]
         }
         return nil
     }
     
-    subscript(index: Int) -> JsonObject? {
+    subscript(index: Int) -> JSONObject? {
         if case let .array(a) = self {
             if index < a.count {
                 return a[index]
@@ -56,14 +56,14 @@ indirect enum JsonObject {
         return nil
     }
     
-    var dictionnaryValue: [String: JsonObject]? {
+    var dictionnaryValue: [String: JSONObject]? {
         if case let .dictionnary(d) = self {
             return d
         }
         return nil
     }
     
-    var arrayValue: [JsonObject]? {
+    var arrayValue: [JSONObject]? {
         if case let .array(a) = self {
             return a
         }
@@ -106,7 +106,7 @@ indirect enum JsonObject {
     }
 }
 
-extension JsonObject: CustomStringConvertible {
+extension JSONObject: CustomStringConvertible {
     
     func description(offsetMargin n: Int) -> String {
         let oneMargin = "  "
@@ -143,9 +143,9 @@ extension JsonObject: CustomStringConvertible {
     
 }
 
-extension JsonObject: Equatable {
+extension JSONObject: Equatable {
     
-    static func ==(lhs: JsonObject, rhs: JsonObject) -> Bool {
+    static func ==(lhs: JSONObject, rhs: JSONObject) -> Bool {
         switch lhs {
         case .dictionnary(let ld):
             if case let .dictionnary(rd) = rhs {

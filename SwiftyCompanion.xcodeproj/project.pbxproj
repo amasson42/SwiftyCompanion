@@ -15,6 +15,8 @@
 		64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */; };
 		64E80872201F6A9000373B84 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80871201F6A9000373B84 /* JSONReader.swift */; };
 		64E80875201F6ABF00373B84 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80874201F6ABF00373B84 /* Student.swift */; };
+		F65FB51420209977004FCDD9 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB51320209977004FCDD9 /* StudentViewController.swift */; };
+		F65FB5162020A167004FCDD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5152020A167004FCDD9 /* LoginView.swift */; };
 		F665AC53201F6C6C00462B16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC52201F6C6C00462B16 /* SearchViewController.swift */; };
 		F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC59201F710000462B16 /* StudentProfileView.swift */; };
 		F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851A201F597800F479D9 /* AppDelegate.swift */; };
@@ -34,6 +36,8 @@
 		64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionAPI.swift; sourceTree = "<group>"; };
 		64E80871201F6A9000373B84 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
 		64E80874201F6ABF00373B84 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		F65FB51320209977004FCDD9 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		F65FB5152020A167004FCDD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F665AC52201F6C6C00462B16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F665AC59201F710000462B16 /* StudentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileView.swift; sourceTree = "<group>"; };
 		F6DF8517201F597800F479D9 /* SwiftyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +87,7 @@
 			children = (
 				F6DF851C201F597800F479D9 /* ViewController.swift */,
 				F665AC52201F6C6C00462B16 /* SearchViewController.swift */,
+				F65FB51320209977004FCDD9 /* StudentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				F665AC59201F710000462B16 /* StudentProfileView.swift */,
+				F65FB5152020A167004FCDD9 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65FB51420209977004FCDD9 /* StudentViewController.swift in Sources */,
 				F6DF8523201F597800F479D9 /* SwiftyCompanion.xcdatamodeld in Sources */,
 				F6DF851D201F597800F479D9 /* ViewController.swift in Sources */,
 				F665AC53201F6C6C00462B16 /* SearchViewController.swift in Sources */,
@@ -220,6 +227,7 @@
 				640CE3FE2020772F00BBCA2B /* Cursus.swift in Sources */,
 				64E80872201F6A9000373B84 /* JSONReader.swift in Sources */,
 				64E80875201F6ABF00373B84 /* Student.swift in Sources */,
+				F65FB5162020A167004FCDD9 /* LoginView.swift in Sources */,
 				F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */,
 				F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */,
 			);

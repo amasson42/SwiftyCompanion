@@ -27,10 +27,14 @@ class Student: CustomStringConvertible {
     private var _correction_points: Int?
     private var _profile_image_url: String?
     var cursus: [Cursus] = []
+    var achievements: [Achievement] = []
     
     init?(json: [String: Any]) {
         
+        print(json)
+        
         let json = JSONObject(json: json)
+        
         
         if let fn = json["first_name"]?.stringValue {
             
@@ -92,6 +96,12 @@ class Student: CustomStringConvertible {
             
         }
         
+        if let image_url = json["image_url"]?.stringValue {
+            
+            self._profile_image_url = image_url
+            
+        }
+        
         if let cursus_users = json["cursus_users"] {
             
             if let cur = cursus_users.arrayValue {
@@ -126,10 +136,25 @@ class Student: CustomStringConvertible {
                 
             }
             
-        
         }
         
-        //dump(cursus)
+        if let achievements_array = json["achievements"] {
+            
+            if let achievements = achievements_array.arrayValue {
+                
+                for achievement in achievements {
+                    
+                    if let new_achievement = Achievement(achievement: achievement) {
+                        
+                        self.achievements.append(new_achievement)
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
         
     }
     

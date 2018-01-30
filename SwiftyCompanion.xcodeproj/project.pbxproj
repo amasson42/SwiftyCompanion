@@ -10,6 +10,7 @@
 		640CE3FE2020772F00BBCA2B /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE3FD2020772F00BBCA2B /* Cursus.swift */; };
 		640CE400202081AF00BBCA2B /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE3FF202081AF00BBCA2B /* Skill.swift */; };
 		640CE4022020871700BBCA2B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE4012020871700BBCA2B /* Project.swift */; };
+		640CE4042020B2AD00BBCA2B /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE4032020B2AD00BBCA2B /* Achievement.swift */; };
 		64E8086E201F5C8B00373B84 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E8086D201F5C8B00373B84 /* HTTPClient.swift */; };
 		64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */; };
 		64E80872201F6A9000373B84 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80871201F6A9000373B84 /* JSONReader.swift */; };
@@ -31,6 +32,7 @@
 		640CE3FD2020772F00BBCA2B /* Cursus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		640CE3FF202081AF00BBCA2B /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		640CE4012020871700BBCA2B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		640CE4032020B2AD00BBCA2B /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		64E8086D201F5C8B00373B84 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionAPI.swift; sourceTree = "<group>"; };
 		64E80871201F6A9000373B84 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				640CE3FD2020772F00BBCA2B /* Cursus.swift */,
 				640CE3FF202081AF00BBCA2B /* Skill.swift */,
 				640CE4012020871700BBCA2B /* Project.swift */,
+				640CE4032020B2AD00BBCA2B /* Achievement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				640CE4022020871700BBCA2B /* Project.swift in Sources */,
 				640CE400202081AF00BBCA2B /* Skill.swift in Sources */,
 				64E8086E201F5C8B00373B84 /* HTTPClient.swift in Sources */,
+				640CE4042020B2AD00BBCA2B /* Achievement.swift in Sources */,
 				640CE3FE2020772F00BBCA2B /* Cursus.swift in Sources */,
 				64E80872201F6A9000373B84 /* JSONReader.swift in Sources */,
 				64E80875201F6ABF00373B84 /* Student.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 
 class Student {
     
+    var id : Int = 0
     private var _firstname: String?
     private var _lastname: String?
     private var _displayname: String?
@@ -23,6 +24,7 @@ class Student {
     private var _profile_image_url: String?
     var cursus: [Cursus] = []
     var achievements: [Achievement] = []
+    var expertises: [String] = []
     
     init?(json: [String: Any]) {
         
@@ -32,6 +34,11 @@ class Student {
         
         let json = JSONObject(json: json)
         
+        if let id = json["id"]?.integerValue {
+            
+            self.id = id
+            
+        }
         
         if let fn = json["first_name"]?.stringValue {
             
@@ -152,6 +159,52 @@ class Student {
             }
             
         }
+        
+        if let expertise_array = json["expertises_users"] {
+            
+            if let expertises = expertise_array.arrayValue {
+            
+                for expertise in expertises {
+            
+                    if let id = expertise["expertise_id"]?.stringValue {
+                        
+                        self.expertises.append(id)
+            
+                    }
+            
+                }
+            
+            }
+            
+        }
+        
+//        if let expertise_array = json["expertises_users"] {
+//
+//            if let expertises = expertise_array.arrayValue {
+//
+//                for expertise in expertises {
+//
+//                    if let id = expertise["expertise_id"]?.stringValue {
+//
+//                        SwiftyCompanionAPI.shared.getExpertise(id: id) { json in
+//
+//                            let expertise = JSONObject(json: json)
+//
+//                            if let new_expertise = Expertise(expertise: expertise) {
+//
+//                                self.expertises.append(new_expertise)
+//
+//                            }
+//
+//                        }
+//
+//                    }
+//
+//                }
+//
+//            }
+//
+//        }
     
     }
     

@@ -21,6 +21,7 @@ class StudentViewController: UIViewController {
         
         if let student = self.student {
             navigationHeader.title = student.login
+            navigationHeader.backBarButtonItem?.title = student.login
             headerProfileView.takeValuesFromStudent(student: student)
             cursusView.student = student
         } else {
@@ -39,6 +40,9 @@ class StudentViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
-
-    @IBOutlet weak var seeProjectsButton: UIButton!
+    
+    @IBAction func seeProjects(_ sender: Any) {
+        self.performSegue(withIdentifier: "ShowProjectsSegue", sender: sender)
+    }
+    
 }

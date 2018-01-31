@@ -102,9 +102,9 @@ class Project {
     
     var validated : String {
         get {
-            if _validated != nil {
+            if let v = _validated {
                 
-                return String(describing: _validated)
+                return String(describing: v)
                 
             } else {
                 
@@ -116,9 +116,9 @@ class Project {
     
     var occurence : String {
         get {
-            if _occurence != nil {
+            if let o = _occurence {
                 
-                return String(describing: _occurence)
+                return String(describing: o)
                 
             } else {
                 
@@ -130,9 +130,9 @@ class Project {
     
     var final_mark : String {
         get {
-            if _final_mark != nil {
+            if let f = _final_mark {
                 
-                return String(describing: _final_mark)
+                return String(describing: f)
                 
             } else {
                 

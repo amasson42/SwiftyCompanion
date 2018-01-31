@@ -174,10 +174,16 @@ class HTTPClient {
                         print("Error:", error!)
                     } else if let d = data {
                         do {
-                            if let json = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String : Any] {
-                                completion(json)
+                            if let json = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray {
+                                if let j = json[0] as? [String : Any] {
+                                    completion(j)
+                                } else {
+                                    completion(nil)
+                                }
+                                
                             }
-                        } catch ( _) {
+                        } catch (let err) {
+                            print(err)
                             completion(nil)
                         }
                     }

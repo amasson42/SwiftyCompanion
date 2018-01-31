@@ -60,9 +60,15 @@ class SearchViewController: UIViewController {
                 return
             }
             if let student = Student(json: json) {
-                self.student = student
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "SearchStudentSegue", sender: sender)
+                SwiftyCompanionAPI.shared.getCoalition(user_id: student.id) {
+                    (json) in
+                    if let json = json {
+                        student.addCoalition(json: JSONObject(json: json))
+                    }
+                    self.student = student
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "SearchStudentSegue", sender: sender)
+                    }
                 }
             } else {
                 // TODO: - handle wrong student

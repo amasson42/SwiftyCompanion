@@ -15,12 +15,15 @@
 		64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */; };
 		64E80872201F6A9000373B84 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80871201F6A9000373B84 /* JSONReader.swift */; };
 		64E80875201F6ABF00373B84 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80874201F6ABF00373B84 /* Student.swift */; };
+		F60A6B4E202217980026FE57 /* Expertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A6B4D202217970026FE57 /* Expertise.swift */; };
 		F65FB51420209977004FCDD9 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB51320209977004FCDD9 /* StudentViewController.swift */; };
 		F65FB5162020A167004FCDD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5152020A167004FCDD9 /* LoginView.swift */; };
 		F65FB5182020B5AA004FCDD9 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5172020B5AA004FCDD9 /* WebImageView.swift */; };
 		F65FB51A2020CAB3004FCDD9 /* CursusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5192020CAB3004FCDD9 /* CursusView.swift */; };
 		F665AC53201F6C6C00462B16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC52201F6C6C00462B16 /* SearchViewController.swift */; };
 		F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F665AC59201F710000462B16 /* StudentProfileView.swift */; };
+		F68FF33A2021F6BD00E03CFC /* Coalition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FF3392021F6BD00E03CFC /* Coalition.swift */; };
+		F68FF33C2022047D00E03CFC /* StudentSkillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FF33B2022047D00E03CFC /* StudentSkillView.swift */; };
 		F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851A201F597800F479D9 /* AppDelegate.swift */; };
 		F6DF851D201F597800F479D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851C201F597800F479D9 /* ViewController.swift */; };
 		F6DF8520201F597800F479D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6DF851E201F597800F479D9 /* Main.storyboard */; };
@@ -38,12 +41,15 @@
 		64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionAPI.swift; sourceTree = "<group>"; };
 		64E80871201F6A9000373B84 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
 		64E80874201F6ABF00373B84 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		F60A6B4D202217970026FE57 /* Expertise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expertise.swift; sourceTree = "<group>"; };
 		F65FB51320209977004FCDD9 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		F65FB5152020A167004FCDD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F65FB5172020B5AA004FCDD9 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		F65FB5192020CAB3004FCDD9 /* CursusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursusView.swift; sourceTree = "<group>"; };
 		F665AC52201F6C6C00462B16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F665AC59201F710000462B16 /* StudentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileView.swift; sourceTree = "<group>"; };
+		F68FF3392021F6BD00E03CFC /* Coalition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coalition.swift; sourceTree = "<group>"; };
+		F68FF33B2022047D00E03CFC /* StudentSkillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSkillView.swift; sourceTree = "<group>"; };
 		F6DF8517201F597800F479D9 /* SwiftyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DF851A201F597800F479D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6DF851C201F597800F479D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 			children = (
 				64E80874201F6ABF00373B84 /* Student.swift */,
 				640CE3FD2020772F00BBCA2B /* Cursus.swift */,
+				F68FF3392021F6BD00E03CFC /* Coalition.swift */,
+				F60A6B4D202217970026FE57 /* Expertise.swift */,
 				640CE3FF202081AF00BBCA2B /* Skill.swift */,
 				640CE4012020871700BBCA2B /* Project.swift */,
 				640CE4032020B2AD00BBCA2B /* Achievement.swift */,
@@ -111,6 +119,7 @@
 				F65FB5152020A167004FCDD9 /* LoginView.swift */,
 				F65FB5172020B5AA004FCDD9 /* WebImageView.swift */,
 				F65FB5192020CAB3004FCDD9 /* CursusView.swift */,
+				F68FF33B2022047D00E03CFC /* StudentSkillView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,11 +238,14 @@
 				64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */,
 				640CE4022020871700BBCA2B /* Project.swift in Sources */,
 				640CE400202081AF00BBCA2B /* Skill.swift in Sources */,
+				F68FF33C2022047D00E03CFC /* StudentSkillView.swift in Sources */,
 				64E8086E201F5C8B00373B84 /* HTTPClient.swift in Sources */,
 				640CE4042020B2AD00BBCA2B /* Achievement.swift in Sources */,
 				640CE3FE2020772F00BBCA2B /* Cursus.swift in Sources */,
 				64E80872201F6A9000373B84 /* JSONReader.swift in Sources */,
+				F68FF33A2021F6BD00E03CFC /* Coalition.swift in Sources */,
 				64E80875201F6ABF00373B84 /* Student.swift in Sources */,
+				F60A6B4E202217980026FE57 /* Expertise.swift in Sources */,
 				F65FB5162020A167004FCDD9 /* LoginView.swift in Sources */,
 				F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */,
 				F65FB5182020B5AA004FCDD9 /* WebImageView.swift in Sources */,

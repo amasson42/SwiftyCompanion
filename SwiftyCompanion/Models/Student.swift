@@ -24,7 +24,7 @@ class Student {
     private var _profile_image_url: String?
     var cursus: [Cursus] = []
     var achievements: [Achievement] = []
-    var expertises: [String] = []
+    var expertises: [Expertise] = []
     var coalition: Coalition?
     
     init?(json: [String: Any]) {
@@ -166,15 +166,15 @@ class Student {
             if let expertises = expertise_array.arrayValue {
             
                 for expertise in expertises {
-            
-                    if let id = expertise["expertise_id"]?.stringValue {
+                    
+                    if let new_expertise = Expertise(expertise: expertise) {
                         
-                        self.expertises.append(id)
-            
+                        self.expertises.append(new_expertise)
+                        
                     }
             
                 }
-            
+                
             }
             
         }

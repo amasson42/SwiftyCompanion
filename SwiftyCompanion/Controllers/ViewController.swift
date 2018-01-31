@@ -19,7 +19,6 @@ class ViewController: UIViewController {
                     if let j = json {
                         if let student = Student(json: j) {
                             dump(student.cursus)
-                            //print("DUDE")
                         }
                     } else {
                         print("Nothing")

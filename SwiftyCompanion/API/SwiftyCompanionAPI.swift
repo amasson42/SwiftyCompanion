@@ -58,14 +58,16 @@ final class SwiftyCompanionAPI {
         }
     }
     
-    func getExpertise(id: String, completion: @escaping (_ json: [String:Any]?) -> Void) {
-        httpClient.getExpertise(id: id) { json in
+    func getExpertise(id: Int, completion: @escaping (_ json: [String:Any]?) -> Void) {
+        let strId = id.description
+        httpClient.getExpertise(id: strId) { json in
             completion(json)
         }
     }
     
-    func getCoalition(user_id: String, completion: @escaping (_ json: [String : Any]?) -> Void) {
-        httpClient.getCoalition(user_id: user_id) { json in
+    func getCoalition(user_id: Int, completion: @escaping (_ json: [String : Any]?) -> Void) {
+        let strId = user_id.description
+        httpClient.getCoalition(user_id: strId) { json in
             completion(json)
         }
     }

@@ -175,7 +175,9 @@ class HTTPClient {
                     } else if let d = data {
                         do {
                             if let json = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray {
-                                if let j = json[0] as? [String : Any] {
+                                if json.count == 0 {
+                                    completion(nil)
+                                } else if let j = json[0] as? [String : Any] {
                                     completion(j)
                                 } else {
                                     completion(nil)

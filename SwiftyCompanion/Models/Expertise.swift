@@ -12,77 +12,80 @@ class Expertise {
     
     private var _id : Int?
     private var _name : String?
-    private var _kind : String?
-    private var _url : String?
+    private var _value: Int?
     
     init?(expertise: JSONObject) {
         
-        if let id = expertise["id"]?.integerValue {
+        if let id = expertise["expertise_id"]?.integerValue {
             
             self._id = id
             
         }
         
-        if let name = expertise["name"]?.stringValue {
+        if let value = expertise["value"]?.integerValue {
             
-            self._name = name
-            
-        }
-        
-        if let kind = expertise["kind"]?.stringValue {
-            
-            self._kind = kind
+            self._value = value
             
         }
-        
-        if let url = expertise["url"]?.stringValue {
-            
-            self._url = url
-            
-        }
-        
     }
     
-    var name : String {
+    var id : Int {
         get {
-            if let n = _name {
+            if let i = _id {
                 
-                return n
+                return i
                 
             } else {
                 
-                return "Unavailable"
+                return -1
                 
             }
         }
     }
     
-    var kind : String {
+    var name : String? {
         get {
-            if let k = _kind {
+            
+            return _name
+            
+        }
+    }
+    
+    var value : Int {
+        get {
+            if let v = _value {
                 
-                return k
+                return v
                 
             } else {
                 
-                return "Unavailable"
+                return -1
                 
             }
         }
     }
     
-    var url : String {
-        get {
-            if let u = _url {
+    func loadName(completion: (() -> ())? = nil) {
+        
+        if let id = self._id {
+            
+            SwiftyCompanionAPI.shared.getExpertise(id: id) {
+                (json) in
                 
-                return u
+                guard let json = json else {
+                    completion?()
+                    return
+                }
                 
-            } else {
+                let jsonObject = JSONObject(json: json)
                 
-                return "Unavailable"
+                self._name = jsonObject["name"]?.stringValue
                 
+                completion?()
             }
+            
         }
+        
     }
     
 }

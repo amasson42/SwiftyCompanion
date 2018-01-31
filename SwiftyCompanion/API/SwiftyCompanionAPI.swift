@@ -64,7 +64,7 @@ final class SwiftyCompanionAPI {
         }
     }
     
-    func getCoalition(user_id: String, completion: @escaping (_ json: [String:Any]?) -> Void) {
+    func getCoalition(user_id: String, completion: @escaping (_ json: [String : Any]?) -> Void) {
         httpClient.getCoalition(user_id: user_id) { json in
             completion(json)
         }

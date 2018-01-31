@@ -38,9 +38,9 @@ class Skill {
     
     var id : String {
         get {
-            if _id != nil {
+            if let i = _id {
                 
-                return String(describing: _id)
+                return String(describing: i)
                 
             } else {
                 
@@ -66,9 +66,9 @@ class Skill {
     
     var level : String {
         get {
-            if _level != nil {
+            if let l = _level {
                 
-                return String(describing: _level)
+                return String(describing: l)
                 
             } else {
                 

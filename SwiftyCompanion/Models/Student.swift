@@ -25,6 +25,7 @@ class Student {
     var cursus: [Cursus] = []
     var achievements: [Achievement] = []
     var expertises: [String] = []
+    var coalition: Coalition?
     
     init?(json: [String: Any]) {
         
@@ -230,6 +231,12 @@ class Student {
         
     }
     
+    func addCoalition(json : JSONObject) {
+        
+        self.coalition = Coalition(coalition: json)
+        
+    }
+    
     var firstname : String {
         get {
             if let fn = _firstname {
@@ -330,9 +337,9 @@ class Student {
     
     var level : String {
         get {
-            if _level != nil {
+            if let l = _level {
                 
-                return String(describing: _level)
+                return String(describing: l)
                 
             } else {
                 
@@ -344,9 +351,9 @@ class Student {
     
     var wallet : String {
         get {
-            if _wallet != nil {
+            if let w = _wallet {
                 
-                return String(describing: _wallet)
+                return String(describing: w)
                 
             } else {
                 
@@ -358,9 +365,9 @@ class Student {
     
     var correction_points : String {
         get {
-            if _correction_points != nil {
+            if let c = _correction_points {
                 
-                return String(describing: _correction_points)
+                return String(describing: c)
                 
             } else {
                 

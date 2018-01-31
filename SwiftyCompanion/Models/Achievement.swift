@@ -115,9 +115,9 @@ class Achievement {
     
     var visible : String {
         get {
-            if _visible != nil {
+            if let v = _visible {
                 
-                return String(describing: _visible)
+                return String(describing: v)
                 
             } else {
                 
@@ -143,9 +143,9 @@ class Achievement {
     
     var nbr_of_success : String {
         get {
-            if _nbr_of_success != nil {
+            if let n = _nbr_of_success {
                 
-                return String(describing: _nbr_of_success)
+                return String(describing: n)
                 
             } else {
                 

@@ -94,9 +94,9 @@ class Cursus {
     
     var level : String {
         get {
-            if _level != nil {
+            if let l = _level {
                 
-                return String(describing: _level)
+                return String(describing: l)
                 
             } else {
                 

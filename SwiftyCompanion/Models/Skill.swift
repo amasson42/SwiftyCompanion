@@ -64,15 +64,15 @@ class Skill {
         }
     }
     
-    var level : String {
+    var level : Double {
         get {
             if let l = _level {
                 
-                return String(describing: l)
+                return l
                 
             } else {
                 
-                return "Unavailable"
+                return 0
                 
             }
         }

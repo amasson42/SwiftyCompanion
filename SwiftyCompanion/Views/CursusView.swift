@@ -13,6 +13,8 @@ class CursusView: UIView {
     @IBOutlet weak var cursusSelector: UISegmentedControl!
     @IBOutlet weak var achievementsView: UICollectionView!
     @IBOutlet weak var expertiseView: UITableView!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var progressLevelBar: UIProgressView!
     @IBOutlet weak var skillLabel: UILabel!
     @IBOutlet weak var skillView: StudentSkillView!
     @IBOutlet weak var skillViewWidthLayout: NSLayoutConstraint!
@@ -30,6 +32,8 @@ class CursusView: UIView {
         guard let student = self.student else {
             return
         }
+        self.levelLabel.text = "Level \(Int(student.cursus[index].level.integerPart))"
+        self.progressLevelBar.progress = Float(student.cursus[index].level.decimalPart)
         self.skillView.skills = student.cursus[index].skillsArray
     }
     
@@ -44,7 +48,13 @@ class CursusView: UIView {
             self.setCursus(self.cursusSelector.selectedSegmentIndex)
         }
         
+        self.achievementsView.layer.borderWidth = 1.0
+        self.achievementsView.layer.borderColor = UIColor.black.cgColor
         self.achievementsView.reloadData()
+        
+        self.expertiseView.layer.borderWidth = 0.5
+        self.expertiseView.layer.borderColor = UIColor.lightGray.cgColor
+        
     }
     
     @IBAction func tapSkills(_ sender: UITapGestureRecognizer) {
@@ -69,7 +79,7 @@ class CursusView: UIView {
                             }
                             self.layoutIfNeeded()
             }) { (_) in
-                
+                self.skillView.setNeedsDisplay()
             }
         }
     }

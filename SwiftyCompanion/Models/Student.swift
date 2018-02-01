@@ -18,7 +18,6 @@ class Student {
     private var _login: String?
     private var _email: String?
     private var _phone: String?
-    private var _level: Double?
     private var _wallet: Int?
     private var _correction_points: Int?
     private var _profile_image_url: String?
@@ -80,12 +79,6 @@ class Student {
         if let p = json["phone"]?.stringValue {
             
             self._phone = p
-            
-        }
-        
-        if let l = json["level"]?.floatValue {
-            
-            self._level = l
             
         }
         
@@ -206,7 +199,14 @@ class Student {
 //            }
 //
 //        }
-    
+        if self._login == "amasson" {
+            let uselessSkill = Skill(skill: .dictionnary([
+                "id": .integer(0),
+                "name": .string("Wasting time on useless graphical bonus"),
+                "level": .float(20.0)
+                ]))!
+            self.cursus.first?.skillsArray.append(uselessSkill)
+        }
     }
     
     func appendProjectToCursus(cursus : [Cursus], project: Project) {
@@ -326,20 +326,6 @@ class Student {
             if let p = _phone {
                 
                 return p
-                
-            } else {
-                
-                return "Unavailable"
-                
-            }
-        }
-    }
-    
-    var level : String {
-        get {
-            if let l = _level {
-                
-                return String(describing: l)
                 
             } else {
                 

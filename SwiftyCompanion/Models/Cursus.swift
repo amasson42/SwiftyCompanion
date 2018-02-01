@@ -18,7 +18,9 @@ class Cursus {
     var projectsArray : [Project] = []
     
     init?(json : JSONObject) {
-            
+        
+        print(json)
+        
         if let id = json["cursus"]?["id"]?.integerValue {
                 
             self.id = id
@@ -36,7 +38,7 @@ class Cursus {
         }
             
         if let l = json["level"]?.floatValue {
-                
+            
             self._level = l
                 
         }
@@ -52,7 +54,7 @@ class Cursus {
             for skill in skills {
                     
                 if let s = Skill(skill : skill) {
-                        
+                    
                     skillsArray.append(s)
                     
                 }
@@ -92,15 +94,15 @@ class Cursus {
         }
     }
     
-    var level : String {
+    var level : Double {
         get {
             if let l = _level {
                 
-                return String(describing: l)
+                return l
                 
             } else {
                 
-                return "Unavailable"
+                return 0
                 
             }
         }

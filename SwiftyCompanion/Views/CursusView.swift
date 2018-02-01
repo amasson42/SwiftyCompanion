@@ -23,11 +23,11 @@ class CursusView: UIView {
         }
     }
     
-    @IBAction func selectCursus(_ sender: UISegmentedControl) {
+    func setCursus(_ index: Int) {
         guard let student = self.student else {
             return
         }
-        self.skillView.skills = student.cursus[sender.selectedSegmentIndex].skillsArray
+        self.skillView.skills = student.cursus[index].skillsArray
     }
     
     func reloadUI() {
@@ -37,7 +37,7 @@ class CursusView: UIView {
                 self.cursusSelector.insertSegment(withTitle: cursus.name, at: self.cursusSelector.numberOfSegments, animated: false)
             }
             self.cursusSelector.selectedSegmentIndex = 0
-            self.selectCursus(self.cursusSelector)
+            self.setCursus(self.cursusSelector.selectedSegmentIndex)
         }
         
         self.achievementsView.reloadData()

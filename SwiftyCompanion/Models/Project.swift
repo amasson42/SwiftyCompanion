@@ -15,6 +15,7 @@ class Project {
     private var _validated : Bool?
     private var _occurence : Int?
     private var _final_mark : Int?
+    private var _status: String?
     var parent_id : Int?
     var cursus_ids : [Int] = []
     var children : [Project] = []
@@ -43,7 +44,7 @@ class Project {
             
         }
         
-        if let o = project["occurence"]?.integerValue {
+        if let o = project["occurrence"]?.integerValue {
             
             self._occurence = o
             
@@ -69,7 +70,6 @@ class Project {
             
         }
         
-        
         if let cursus_ids = project["cursus_ids"]?.arrayValue {
             
             for ci in cursus_ids {
@@ -81,6 +81,12 @@ class Project {
                 }
             
             }
+            
+        }
+        
+        if let status = project["status"]?.stringValue {
+            
+            self._status = status
             
         }
         
@@ -100,46 +106,41 @@ class Project {
         }
     }
     
-    var validated : String {
+    var validated : Bool {
         get {
             if let v = _validated {
                 
-                return String(describing: v)
+                return v
                 
             } else {
                 
-                return "Unavailable"
+                return false
                 
             }
         }
     }
     
-    var occurence : String {
+    var occurence : Int? {
         get {
-            if let o = _occurence {
-                
-                return String(describing: o)
-                
-            } else {
-                
-                return "Unavailable"
-                
-            }
+            
+            return _occurence
+            
         }
     }
     
-    var final_mark : String {
+    var final_mark : Int? {
         get {
-            if let f = _final_mark {
-                
-                return String(describing: f)
-                
-            } else {
-                
-                return "Unavailable"
-                
-            }
+            
+            return _final_mark
+            
         }
     }
     
+    var status : String? {
+        get {
+            
+            return _status
+            
+        }
+    }
 }

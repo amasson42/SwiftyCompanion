@@ -15,6 +15,7 @@ class StudentViewController: UIViewController {
     @IBOutlet weak var cursusView: CursusView!
     
     var student: Student?
+    var cursusIndex: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class StudentViewController: UIViewController {
             navigationHeader.backBarButtonItem?.title = student.login
             headerProfileView.takeValuesFromStudent(student: student)
             cursusView.student = student
+            if !student.cursus.isEmpty {
+                cursusIndex = 0
+            }
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -38,11 +42,22 @@ class StudentViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let target = segue.destination as? ProjectsViewController,
+            self.cursusIndex >= 0,
+            let projects = self.student?.cursus[self.cursusIndex].projectsArray {
+            target.projects = projects
+        } else {
+            print("no projects")
+        }
     }
     
     @IBAction func seeProjects(_ sender: Any) {
         self.performSegue(withIdentifier: "ShowProjectsSegue", sender: sender)
+    }
+    
+    @IBAction func changeCursus(_ sender: UISegmentedControl) {
+        self.cursusIndex = sender.selectedSegmentIndex
+        self.cursusView.setCursus(self.cursusIndex)
     }
     
 }

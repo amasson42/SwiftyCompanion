@@ -27,6 +27,7 @@
 		F6AC14EB20232EF4004F4EFA /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AC14EA20232EF4004F4EFA /* ProjectsViewController.swift */; };
 		F6AC14ED20235CE0004F4EFA /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AC14EC20235CE0004F4EFA /* LayoutExtensions.swift */; };
 		F6AC14EF202373BF004F4EFA /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AC14EE202373BF004F4EFA /* DoubleExtensions.swift */; };
+		F6AC151F20239394004F4EFA /* SwiftSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AC152020239394004F4EFA /* SwiftSVG.framework */; };
 		F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851A201F597800F479D9 /* AppDelegate.swift */; };
 		F6DF851D201F597800F479D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851C201F597800F479D9 /* ViewController.swift */; };
 		F6DF8520201F597800F479D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6DF851E201F597800F479D9 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45F301C8EDC7C04BFA0806CB /* Pods-SwiftyCompanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCompanion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCompanion/Pods-SwiftyCompanion.debug.xcconfig"; sourceTree = "<group>"; };
 		640CE3FD2020772F00BBCA2B /* Cursus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		640CE3FF202081AF00BBCA2B /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		640CE4012020871700BBCA2B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionAPI.swift; sourceTree = "<group>"; };
 		64E80871201F6A9000373B84 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
 		64E80874201F6ABF00373B84 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9850FC6F35DD7F9103274D81 /* Pods-SwiftyCompanion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyCompanion.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyCompanion/Pods-SwiftyCompanion.release.xcconfig"; sourceTree = "<group>"; };
+		EB54C253516B192EE938CD80 /* Pods_SwiftyCompanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyCompanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60A6B4D202217970026FE57 /* Expertise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expertise.swift; sourceTree = "<group>"; };
 		F65FB51320209977004FCDD9 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		F65FB5152020A167004FCDD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 		F6AC14EA20232EF4004F4EFA /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		F6AC14EC20235CE0004F4EFA /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
 		F6AC14EE202373BF004F4EFA /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		F6AC152020239394004F4EFA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DF8517201F597800F479D9 /* SwiftyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DF851A201F597800F479D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6DF851C201F597800F479D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,12 +76,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AC151F20239394004F4EFA /* SwiftSVG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00C61DA1DD939690626D40E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45F301C8EDC7C04BFA0806CB /* Pods-SwiftyCompanion.debug.xcconfig */,
+				9850FC6F35DD7F9103274D81 /* Pods-SwiftyCompanion.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		64E80868201F5AF500373B84 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,11 +148,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F6AC150720238CFF004F4EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6AC152020239394004F4EFA /* SwiftSVG.framework */,
+				EB54C253516B192EE938CD80 /* Pods_SwiftyCompanion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F6DF850E201F597800F479D9 = {
 			isa = PBXGroup;
 			children = (
 				F6DF8519201F597800F479D9 /* SwiftyCompanion */,
 				F6DF8518201F597800F479D9 /* Products */,
+				F6AC150720238CFF004F4EFA /* Frameworks */,
+				00C61DA1DD939690626D40E5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6DF852C201F597800F479D9 /* Build configuration list for PBXNativeTarget "SwiftyCompanion" */;
 			buildPhases = (
+				C6225FC4A353691A1C444F3F /* [CP] Check Pods Manifest.lock */,
 				F6DF8513201F597800F479D9 /* Sources */,
 				F6DF8514201F597800F479D9 /* Frameworks */,
 				F6DF8515201F597800F479D9 /* Resources */,
+				EE3EB1514BFAA686A6E1D86F /* [CP] Embed Pods Frameworks */,
+				C0603238FA5129306D44248F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,6 +262,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0603238FA5129306D44248F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCompanion/Pods-SwiftyCompanion-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6225FC4A353691A1C444F3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftyCompanion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE3EB1514BFAA686A6E1D86F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCompanion/Pods-SwiftyCompanion-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSVG.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyCompanion/Pods-SwiftyCompanion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F6DF8513201F597800F479D9 /* Sources */ = {
@@ -396,6 +479,7 @@
 		};
 		F6DF852D201F597800F479D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45F301C8EDC7C04BFA0806CB /* Pods-SwiftyCompanion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -411,6 +495,7 @@
 		};
 		F6DF852E201F597800F479D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9850FC6F35DD7F9103274D81 /* Pods-SwiftyCompanion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

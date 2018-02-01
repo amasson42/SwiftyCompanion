@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSVG
 
 class CursusView: UIView {
     
@@ -72,15 +73,14 @@ class CursusView: UIView {
                                 self.skillLabel.layer.borderWidth = 1.0
                                 self.skillLabel.layer.borderColor = UIColor.black.cgColor
                                 self.skillLabel.layer.cornerRadius = 5.0
+                                self.skillView.setNeedsDisplay()
                             } else {
                                 self.skillViewWidthLayout.constant = 0
                                 self.skillLabel.layer.borderWidth = 0.0
                                 self.skillLabel.layer.cornerRadius = 0.0
                             }
                             self.layoutIfNeeded()
-            }) { (_) in
-                self.skillView.setNeedsDisplay()
-            }
+            })
         }
     }
     
@@ -102,15 +102,20 @@ extension CursusView: UICollectionViewDataSource, UICollectionViewDelegate {
             return viewCell
         }
         
-        let imageView = viewCell.viewWithTag(1) as! WebImageView
         let nameView = viewCell.viewWithTag(2) as! UILabel
         
-        imageView.imageUrl = "https://api.intra.42.fr" + student.achievements[indexPath.row].image
-        imageView.reloadImage {
-            if let error = imageView.downloadError {
-                print("webview download error:", error)
-            }
-        }
+        let imageUrl = URL(string: "https://api.intra.42.fr" + student.achievements[indexPath.row].image)!
+        
+        let svgImage = UIView(SVGURL: imageUrl)
+        viewCell.contentView.addSubview(svgImage)
+        
+        NSLayoutConstraint.activate([
+            svgImage.centerXAnchor.constraint(equalTo: viewCell.contentView.centerXAnchor),
+            svgImage.centerYAnchor.constraint(equalTo: viewCell.contentView.centerYAnchor),
+            svgImage.widthAnchor.constraint(equalTo: viewCell.contentView.widthAnchor),
+            svgImage.heightAnchor.constraint(equalTo: viewCell.contentView.heightAnchor)
+        ])
+        
         nameView.text = student.achievements[indexPath.row].name
         
         return viewCell

@@ -17,6 +17,13 @@ class StudentProfileView: UIView {
         4: UIImage(named: "order_background")
     ]
     
+    static let coalitionsColors: [Int: UIColor] = [
+        1: UIColor(red: 68.0 / 255.0, green: 130.0 / 255.0, blue: 216.0 / 255.0, alpha: 1.0),
+        2: UIColor(red: 60.0 / 255.0, green: 195.0 / 255.0, blue: 129.0 / 255.0, alpha: 1.0),
+        3: UIColor(red: 159.0 / 256.0, green: 100.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0),
+        4: UIColor(red: 253.0 / 255.0, green: 105.0 / 255.0, blue: 85.0 / 255.0, alpha: 1.0)
+    ]
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var profileImageView: WebImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,10 +35,24 @@ class StudentProfileView: UIView {
     @IBOutlet weak var logedPostLabel: UILabel!
     
     func takeValuesFromStudent(student: Student) {
+        
+        self.profileImageView.layer.masksToBounds = true
+        self.profileImageView.layer.cornerRadius = profileImageView.frame.height + profileImageView.frame.width
+        self.profileImageView.layer.borderWidth = 1.0
+        UIView.animate(withDuration: 0.75,
+                       delay: 0.5,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.profileImageView.layer.cornerRadius = 30.0
+        }, completion: nil)
         if let coalition = student.coalition,
             let image = StudentProfileView.coalitionsImages[coalition.id] {
             self.backgroundImage.image = image
+            self.profileImageView.layer.borderColor = StudentProfileView.coalitionsColors[coalition.id]?.cgColor
+        } else {
+            self.profileImageView.layer.borderColor = UIColor.black.cgColor
         }
+        
         self.profileImageView.imageUrl = student.profile_image_url
         self.profileImageView.reloadImage()
         self.nameLabel.text = student.displayname

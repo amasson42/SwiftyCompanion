@@ -13,7 +13,10 @@ class CursusView: UIView {
     @IBOutlet weak var cursusSelector: UISegmentedControl!
     @IBOutlet weak var achievementsView: UICollectionView!
     @IBOutlet weak var expertiseView: UITableView!
+    @IBOutlet weak var skillLabel: UILabel!
     @IBOutlet weak var skillView: StudentSkillView!
+    @IBOutlet weak var skillViewWidthLayout: NSLayoutConstraint!
+    var skillViewOpen: Bool = false
     
     var student: Student? {
         didSet {
@@ -31,6 +34,7 @@ class CursusView: UIView {
     }
     
     func reloadUI() {
+        
         self.cursusSelector.removeAllSegments()
         if let student = self.student {
             for cursus in student.cursus {
@@ -42,6 +46,34 @@ class CursusView: UIView {
         
         self.achievementsView.reloadData()
     }
+    
+    @IBAction func tapSkills(_ sender: UITapGestureRecognizer) {
+        self.skillViewOpen = !self.skillViewOpen
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.75,
+                           delay: 0.2,
+                           usingSpringWithDamping: 5.0,
+                           initialSpringVelocity: 3.0,
+                           options: .curveEaseOut,
+                           animations: {
+                            if self.skillViewOpen {
+                                self.skillViewWidthLayout.constant = self.frame.width * 0.45
+                                self.skillLabel.layer.borderWidth = 1.0
+                                self.skillLabel.layer.borderColor = UIColor.black.cgColor
+                                self.skillLabel.layer.cornerRadius = 5.0
+                            } else {
+                                self.skillViewWidthLayout.constant = 0
+                                self.skillLabel.layer.borderWidth = 0.0
+                                self.skillLabel.layer.cornerRadius = 0.0
+                            }
+                            self.layoutIfNeeded()
+            }) { (_) in
+                
+            }
+        }
+    }
+    
 }
 
 extension CursusView: UICollectionViewDataSource, UICollectionViewDelegate {

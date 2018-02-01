@@ -25,6 +25,7 @@
 		F68FF33A2021F6BD00E03CFC /* Coalition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FF3392021F6BD00E03CFC /* Coalition.swift */; };
 		F68FF33C2022047D00E03CFC /* StudentSkillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FF33B2022047D00E03CFC /* StudentSkillView.swift */; };
 		F6AC14EB20232EF4004F4EFA /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AC14EA20232EF4004F4EFA /* ProjectsViewController.swift */; };
+		F6AC14ED20235CE0004F4EFA /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AC14EC20235CE0004F4EFA /* LayoutExtensions.swift */; };
 		F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851A201F597800F479D9 /* AppDelegate.swift */; };
 		F6DF851D201F597800F479D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF851C201F597800F479D9 /* ViewController.swift */; };
 		F6DF8520201F597800F479D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6DF851E201F597800F479D9 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		F68FF3392021F6BD00E03CFC /* Coalition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coalition.swift; sourceTree = "<group>"; };
 		F68FF33B2022047D00E03CFC /* StudentSkillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSkillView.swift; sourceTree = "<group>"; };
 		F6AC14EA20232EF4004F4EFA /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		F6AC14EC20235CE0004F4EFA /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
 		F6DF8517201F597800F479D9 /* SwiftyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DF851A201F597800F479D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6DF851C201F597800F479D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				64E80871201F6A9000373B84 /* JSONReader.swift */,
+				F6AC14EC20235CE0004F4EFA /* LayoutExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				F665AC5A201F710000462B16 /* StudentProfileView.swift in Sources */,
 				F65FB5182020B5AA004FCDD9 /* WebImageView.swift in Sources */,
 				F6DF851B201F597800F479D9 /* AppDelegate.swift in Sources */,
+				F6AC14ED20235CE0004F4EFA /* LayoutExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

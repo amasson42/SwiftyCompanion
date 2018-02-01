@@ -15,7 +15,7 @@ class StudentSkillView: UIView {
             self.setNeedsDisplay(self.bounds)
         }
     }
-    
+
     override func draw(_ rect: CGRect) {
         let colors: [UIColor] = [.green, .red, .blue]
         colors[Int(arc4random() % 3)].set()

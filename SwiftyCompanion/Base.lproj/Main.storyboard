@@ -214,13 +214,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yr-2v-jP9" customClass="CursusView" customModule="SwiftyCompanion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="244" width="375" height="423"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJM-PS-uIa">
-                                        <rect key="frame" x="261.5" y="206.5" width="39.5" height="20.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-MM-4gl">
+                                        <rect key="frame" x="8" y="8" width="359" height="29"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeCursus:" destination="jrO-DW-gvX" eventType="valueChanged" id="lyz-UM-Xtw"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rsg-kv-ckr">
                                         <rect key="frame" x="0.0" y="235" width="188" height="188"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -271,31 +274,41 @@
                                         <rect key="frame" x="8" y="84.5" width="188" height="113.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cUp-ug-D8a">
-                                            <size key="itemSize" width="45" height="44"/>
+                                            <size key="itemSize" width="69" height="80"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AchievementCell" id="tME-Sp-IbZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="AchievementCell" id="tME-Sp-IbZ">
+                                                <rect key="frame" x="0.0" y="17" width="69" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2c-EQ-WhF">
-                                                            <rect key="frame" x="11" y="23" width="24" height="11"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2V5-Xc-g4F">
+                                                            <rect key="frame" x="6" y="6" width="57" height="57"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="2V5-Xc-g4F" secondAttribute="height" multiplier="1:1" id="ibp-ce-lXG"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4g-Wl-570">
+                                                            <rect key="frame" x="2" y="69" width="65" height="6"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="p2c-EQ-WhF" secondAttribute="trailing" constant="2.5" id="Jc7-gS-2pp"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="p2c-EQ-WhF" secondAttribute="bottom" constant="2" id="Ni6-R2-S9s"/>
-                                                    <constraint firstItem="p2c-EQ-WhF" firstAttribute="leading" secondItem="tME-Sp-IbZ" secondAttribute="leadingMargin" constant="2.5" id="UYy-9R-T0Z"/>
+                                                    <constraint firstItem="t4g-Wl-570" firstAttribute="leading" secondItem="tME-Sp-IbZ" secondAttribute="leading" constant="2" id="0T5-ov-j91"/>
+                                                    <constraint firstItem="2V5-Xc-g4F" firstAttribute="top" secondItem="tME-Sp-IbZ" secondAttribute="top" constant="6" id="3zh-nc-xeq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="t4g-Wl-570" secondAttribute="trailing" constant="2" id="H5j-G3-wT1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2V5-Xc-g4F" secondAttribute="trailing" constant="6" id="Orm-2p-2sE"/>
+                                                    <constraint firstItem="2V5-Xc-g4F" firstAttribute="leading" secondItem="tME-Sp-IbZ" secondAttribute="leading" constant="6" id="Urz-84-t5Y"/>
+                                                    <constraint firstItem="t4g-Wl-570" firstAttribute="top" secondItem="2V5-Xc-g4F" secondAttribute="bottom" constant="6" id="bLf-w1-lPw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="t4g-Wl-570" secondAttribute="bottom" constant="5" id="q0l-AU-aOp"/>
                                                 </constraints>
                                             </collectionViewCell>
                                         </cells>
@@ -326,6 +339,13 @@
                                             <action selector="seeProjects:" destination="jrO-DW-gvX" eventType="touchUpInside" id="h8F-RJ-d1q"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJM-PS-uIa">
+                                        <rect key="frame" x="261" y="206" width="39.5" height="20.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDR-UB-l8P" userLabel="skillView" customClass="StudentSkillView" customModule="SwiftyCompanion" customModuleProvider="target">
                                         <rect key="frame" x="187" y="235" width="188" height="188"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -337,16 +357,6 @@
                                             <outletCollection property="gestureRecognizers" destination="geU-M7-GQz" appends="YES" id="8On-j3-ZKG"/>
                                         </connections>
                                     </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-MM-4gl">
-                                        <rect key="frame" x="8" y="8" width="359" height="29"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="changeCursus:" destination="jrO-DW-gvX" eventType="valueChanged" id="lyz-UM-Xtw"/>
-                                        </connections>
-                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>

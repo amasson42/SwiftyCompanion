@@ -71,6 +71,20 @@ class Achievement {
         
     }
     
+    var id : Int {
+        get {
+            if let i = _id {
+                
+                return i
+                
+            } else {
+                
+                return -1
+                
+            }
+        }
+    }
+    
     var name : String {
         get {
             if let n = _name {

@@ -199,7 +199,7 @@ class Student {
 //            }
 //
 //        }
-        if self._login == "amasson" {
+        if _login == "amasson" {
             let uselessSkill = Skill(skill: .dictionnary([
                 "id": .integer(0),
                 "name": .string("Wasting time on useless graphical bonus"),

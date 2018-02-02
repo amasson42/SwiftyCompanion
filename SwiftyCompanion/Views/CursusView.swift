@@ -21,6 +21,8 @@ class CursusView: UIView {
     @IBOutlet weak var skillViewWidthLayout: NSLayoutConstraint!
     var skillViewOpen: Bool = false
     
+    var achievementsImages: [Int: UIImage] = [:]
+    
     var student: Student? {
         didSet {
             if self.student != nil {
@@ -73,6 +75,7 @@ class CursusView: UIView {
                                 self.skillLabel.layer.borderWidth = 1.0
                                 self.skillLabel.layer.borderColor = UIColor.black.cgColor
                                 self.skillLabel.layer.cornerRadius = 5.0
+                                self.skillLabel.layer.masksToBounds = true
                                 self.skillView.setNeedsDisplay()
                             } else {
                                 self.skillViewWidthLayout.constant = 0
@@ -102,21 +105,30 @@ extension CursusView: UICollectionViewDataSource, UICollectionViewDelegate {
             return viewCell
         }
         
-        let nameView = viewCell.viewWithTag(2) as! UILabel
+        let imageView = viewCell.viewWithTag(1) as! UIImageView
+        let nameLabel = viewCell.viewWithTag(2) as! UILabel
+
+        let achievement = student.achievements[indexPath.row]
+        if let image = self.achievementsImages[achievement.id] {
+            imageView.image = image
+        } else {
+            let imageUrl = URL(string: "https://api.intra.42.fr" + achievement.image)!
+            let svgImage = UIView(SVGURL: imageUrl, completion: {
+                (layer) in
+                let imageSize = CGSize(width: 50, height: 50)
+                
+                UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)
+                defer { UIGraphicsEndImageContext() }
+                if let context = UIGraphicsGetCurrentContext() {
+                    layer.render(in: context)
+                    let image = UIGraphicsGetImageFromCurrentImageContext()
+                    self.achievementsImages[achievement.id] = image
+                    collectionView.reloadItems(at: [indexPath])
+                }
+            })
+        }
         
-        let imageUrl = URL(string: "https://api.intra.42.fr" + student.achievements[indexPath.row].image)!
-        
-        let svgImage = UIView(SVGURL: imageUrl)
-        viewCell.contentView.addSubview(svgImage)
-        
-        NSLayoutConstraint.activate([
-            svgImage.centerXAnchor.constraint(equalTo: viewCell.contentView.centerXAnchor),
-            svgImage.centerYAnchor.constraint(equalTo: viewCell.contentView.centerYAnchor),
-            svgImage.widthAnchor.constraint(equalTo: viewCell.contentView.widthAnchor),
-            svgImage.heightAnchor.constraint(equalTo: viewCell.contentView.heightAnchor)
-        ])
-        
-        nameView.text = student.achievements[indexPath.row].name
+        nameLabel.text = achievement.name
         
         return viewCell
     }

@@ -15,6 +15,7 @@
 		64E80870201F635A00373B84 /* SwiftyCompanionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E8086F201F635A00373B84 /* SwiftyCompanionAPI.swift */; };
 		64E80872201F6A9000373B84 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80871201F6A9000373B84 /* JSONReader.swift */; };
 		64E80875201F6ABF00373B84 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E80874201F6ABF00373B84 /* Student.swift */; };
+		9C0E162BD940CED3C471FE79 /* Pods_SwiftyCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB54C253516B192EE938CD80 /* Pods_SwiftyCompanion.framework */; };
 		F60A6B4E202217980026FE57 /* Expertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A6B4D202217970026FE57 /* Expertise.swift */; };
 		F65FB51420209977004FCDD9 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB51320209977004FCDD9 /* StudentViewController.swift */; };
 		F65FB5162020A167004FCDD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65FB5152020A167004FCDD9 /* LoginView.swift */; };
@@ -77,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6AC151F20239394004F4EFA /* SwiftSVG.framework in Frameworks */,
+				9C0E162BD940CED3C471FE79 /* Pods_SwiftyCompanion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

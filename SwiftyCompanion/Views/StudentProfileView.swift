@@ -33,6 +33,7 @@ class StudentProfileView: UIView {
     @IBOutlet weak var correctionPointsLabel: UILabel!
     @IBOutlet weak var coalitionPointsLabel: UILabel!
     @IBOutlet weak var logedPostLabel: UILabel!
+    @IBOutlet weak var callButton: UIButton!
     
     func takeValuesFromStudent(student: Student) {
         
@@ -57,6 +58,7 @@ class StudentProfileView: UIView {
         self.profileImageView.reloadImage()
         self.nameLabel.text = student.displayname
         self.mailLabel.text = "mail: \(student.email)"
+        self.callButton.isEnabled = !student.phone.isEmpty && student.phone != "Unavailable"
         self.phoneLabel.text = "phone: \(student.phone)"
         self.walletsLabel.text = "wallets: \(student.wallet)"
         self.correctionPointsLabel.text = "corrections points: \(student.correction_points)"

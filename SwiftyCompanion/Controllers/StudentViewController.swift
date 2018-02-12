@@ -51,6 +51,27 @@ class StudentViewController: UIViewController {
         }
     }
     
+    @IBAction func callButton(_ sender: Any) {
+        let app = UIApplication.shared
+        guard let phoneText = self.student?.phone,
+            let phoneCallUrl = URL(string: "tel:\(phoneText)"),
+            app.canOpenURL(phoneCallUrl) else {
+                let alertController = UIAlertController(title: "Error", message: "Can't make any call", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+        }
+        let alertController = UIAlertController(title: "Calling", message: "Are you sure you want to call\n\(phoneText)", preferredStyle: .alert)
+        let yesPressed = UIAlertAction(title: "Yes", style: .default) {
+            (action) in
+            app.open(phoneCallUrl, options: [:], completionHandler: nil)
+        }
+        let noPressed = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        alertController.addAction(yesPressed)
+        alertController.addAction(noPressed)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func seeProjects(_ sender: Any) {
         self.performSegue(withIdentifier: "ShowProjectsSegue", sender: sender)
     }

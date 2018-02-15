@@ -19,6 +19,7 @@ class CursusView: UIView {
     @IBOutlet weak var skillLabel: UILabel!
     @IBOutlet weak var skillView: StudentSkillView!
     @IBOutlet weak var skillViewWidthLayout: NSLayoutConstraint!
+    @IBOutlet weak var skillBlurView: UIVisualEffectView!
     var skillViewOpen: Bool = false
     
     var achievementsImages: [Int: UIImage] = [:]
@@ -63,28 +64,28 @@ class CursusView: UIView {
     @IBAction func tapSkills(_ sender: UITapGestureRecognizer) {
         self.skillViewOpen = !self.skillViewOpen
         
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.75,
-                           delay: 0.2,
-                           usingSpringWithDamping: 5.0,
-                           initialSpringVelocity: 3.0,
-                           options: .curveEaseOut,
-                           animations: {
-                            if self.skillViewOpen {
-                                self.skillViewWidthLayout.constant = self.frame.width * 0.45
-                                self.skillLabel.layer.borderWidth = 1.0
-                                self.skillLabel.layer.borderColor = UIColor.black.cgColor
-                                self.skillLabel.layer.cornerRadius = 5.0
-                                self.skillLabel.layer.masksToBounds = true
-                                self.skillView.setNeedsDisplay()
-                            } else {
-                                self.skillViewWidthLayout.constant = 0
-                                self.skillLabel.layer.borderWidth = 0.0
-                                self.skillLabel.layer.cornerRadius = 0.0
-                            }
-                            self.layoutIfNeeded()
-            })
-        }
+        UIView.animate(withDuration: 0.75,
+                       delay: 0.2,
+                       usingSpringWithDamping: 5.0,
+                       initialSpringVelocity: 3.0,
+                       options: .curveEaseOut,
+                       animations: {
+                        if self.skillViewOpen {
+                            self.skillViewWidthLayout.constant = self.frame.width * 0.45
+                            self.skillLabel.layer.borderWidth = 1.0
+                            self.skillLabel.layer.borderColor = UIColor.black.cgColor
+                            self.skillLabel.layer.cornerRadius = 5.0
+                            self.skillLabel.layer.masksToBounds = true
+                            self.skillView.setNeedsDisplay()
+                            self.skillBlurView.alpha = 0.8
+                        } else {
+                            self.skillViewWidthLayout.constant = 0
+                            self.skillLabel.layer.borderWidth = 0.0
+                            self.skillLabel.layer.cornerRadius = 0.0
+                            self.skillBlurView.alpha = 0.0
+                        }
+                        self.layoutIfNeeded()
+        })
     }
     
 }

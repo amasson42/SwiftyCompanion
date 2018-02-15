@@ -58,7 +58,7 @@ class StudentProfileView: UIView {
         self.profileImageView.reloadImage()
         self.nameLabel.text = student.displayname
         self.mailLabel.text = "mail: \(student.email)"
-        self.callButton.isEnabled = !student.phone.isEmpty && student.phone != "Unavailable"
+        self.callButton.isHidden = student.phone.isEmpty || student.phone == "Unavailable"
         self.phoneLabel.text = "phone: \(student.phone)"
         self.walletsLabel.text = "wallets: \(student.wallet)"
         self.correctionPointsLabel.text = "corrections points: \(student.correction_points)"

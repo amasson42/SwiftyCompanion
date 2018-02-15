@@ -352,6 +352,14 @@
                                             <action selector="seeProjects:" destination="jrO-DW-gvX" eventType="touchUpInside" id="h8F-RJ-d1q"/>
                                         </connections>
                                     </button>
+                                    <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzf-tw-OeO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ylL-vg-ELP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJM-PS-uIa">
                                         <rect key="frame" x="261" y="206" width="39.5" height="20.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -377,6 +385,9 @@
                                     <constraint firstItem="WDR-UB-l8P" firstAttribute="width" secondItem="3yr-2v-jP9" secondAttribute="width" multiplier="0.5" identifier="SkillViewWidthLayout" id="2pW-i3-nDM"/>
                                     <constraint firstItem="an8-da-OwR" firstAttribute="top" secondItem="Tj4-IS-Wdn" secondAttribute="bottom" constant="8" id="5uF-HR-IbF"/>
                                     <constraint firstItem="DlZ-io-Ibt" firstAttribute="width" secondItem="3yr-2v-jP9" secondAttribute="width" multiplier="0.5" id="6Z9-Kk-l2A"/>
+                                    <constraint firstItem="lzf-tw-OeO" firstAttribute="leading" secondItem="3yr-2v-jP9" secondAttribute="leading" id="9FN-kQ-pjH"/>
+                                    <constraint firstAttribute="bottom" secondItem="lzf-tw-OeO" secondAttribute="bottom" id="BaX-Tn-cEc"/>
+                                    <constraint firstAttribute="trailing" secondItem="lzf-tw-OeO" secondAttribute="trailing" id="CZ1-rN-iMB"/>
                                     <constraint firstItem="an8-da-OwR" firstAttribute="centerX" secondItem="4dA-qd-UaS" secondAttribute="centerX" id="FKh-1V-pJR"/>
                                     <constraint firstItem="4dA-qd-UaS" firstAttribute="centerY" secondItem="DlZ-io-Ibt" secondAttribute="centerY" id="FmP-lf-gWj"/>
                                     <constraint firstItem="an8-da-OwR" firstAttribute="leading" secondItem="DlZ-io-Ibt" secondAttribute="trailing" constant="10" id="I0W-Yp-veh"/>
@@ -387,6 +398,7 @@
                                     <constraint firstItem="WDR-UB-l8P" firstAttribute="top" secondItem="eJM-PS-uIa" secondAttribute="bottom" constant="8" id="SJu-6p-ToP"/>
                                     <constraint firstItem="T2Q-MM-4gl" firstAttribute="leading" secondItem="3yr-2v-jP9" secondAttribute="leading" constant="8" id="VDH-WG-9gi"/>
                                     <constraint firstItem="Rsg-kv-ckr" firstAttribute="leading" secondItem="3yr-2v-jP9" secondAttribute="leading" id="arM-h0-2uc"/>
+                                    <constraint firstItem="lzf-tw-OeO" firstAttribute="top" secondItem="3yr-2v-jP9" secondAttribute="top" id="bJH-k2-qg2"/>
                                     <constraint firstAttribute="bottom" secondItem="Rsg-kv-ckr" secondAttribute="bottom" id="cPT-fV-LWT"/>
                                     <constraint firstItem="eJM-PS-uIa" firstAttribute="centerX" secondItem="WDR-UB-l8P" secondAttribute="centerX" id="eG1-Xb-NT0"/>
                                     <constraint firstItem="T2Q-MM-4gl" firstAttribute="top" secondItem="3yr-2v-jP9" secondAttribute="top" constant="8" id="eJ9-vX-FuI"/>
@@ -406,6 +418,7 @@
                                     <outlet property="expertiseView" destination="Rsg-kv-ckr" id="BCP-5e-Uoc"/>
                                     <outlet property="levelLabel" destination="Tj4-IS-Wdn" id="DZe-ba-BVP"/>
                                     <outlet property="progressLevelBar" destination="an8-da-OwR" id="Fmv-5q-QOZ"/>
+                                    <outlet property="skillBlurView" destination="lzf-tw-OeO" id="cSF-Ul-8QQ"/>
                                     <outlet property="skillLabel" destination="eJM-PS-uIa" id="ngk-SA-VlH"/>
                                     <outlet property="skillView" destination="WDR-UB-l8P" id="Zty-sT-dLi"/>
                                     <outlet property="skillViewWidthLayout" destination="2pW-i3-nDM" id="zcb-yZ-PFd"/>

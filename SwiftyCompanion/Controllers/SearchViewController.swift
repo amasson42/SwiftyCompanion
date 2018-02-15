@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         
         self.loginView.state = .waitingForAPI
+        self.loginView.loginTextDelegate = self
         
         SwiftyCompanionAPI.shared.connect {
             (success) in

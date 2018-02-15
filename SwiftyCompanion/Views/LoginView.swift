@@ -29,6 +29,7 @@ class LoginView: UIView {
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    weak var loginTextDelegate: UITextFieldDelegate?
     
     func updateUI() {
         switch self.state {
@@ -62,8 +63,10 @@ class LoginView: UIView {
             
             loginField.text = ""
             loginField.alpha = 1
+            loginField.delegate = self.loginTextDelegate
             
             searchButton.alpha = 1
+            searchButton.isEnabled = true
             
         case .searching:
             
@@ -74,8 +77,10 @@ class LoginView: UIView {
             loadingLabel.alpha = 1
             
             loginField.alpha = 1
+            loginField.delegate = nil
             
             searchButton.alpha = 1
+            searchButton.isEnabled = false
             
         }
     }

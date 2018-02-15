@@ -19,8 +19,6 @@ class Cursus {
     
     init?(json : JSONObject) {
         
-        print(json)
-        
         if let id = json["cursus"]?["id"]?.integerValue {
                 
             self.id = id

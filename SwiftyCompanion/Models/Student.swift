@@ -119,9 +119,9 @@ class Student {
         }
         
         if let projects_users = json["projects_users"] {
-        
+            
             if let pro = projects_users.arrayValue {
-             
+                
                 for p in pro {
                     
                     if let new_project = Project(project: p) {
@@ -157,7 +157,7 @@ class Student {
         if let expertise_array = json["expertises_users"] {
             
             if let expertises = expertise_array.arrayValue {
-            
+                
                 for expertise in expertises {
                     
                     if let new_expertise = Expertise(expertise: expertise) {
@@ -165,40 +165,13 @@ class Student {
                         self.expertises.append(new_expertise)
                         
                     }
-            
+                    
                 }
                 
             }
             
         }
         
-//        if let expertise_array = json["expertises_users"] {
-//
-//            if let expertises = expertise_array.arrayValue {
-//
-//                for expertise in expertises {
-//
-//                    if let id = expertise["expertise_id"]?.stringValue {
-//
-//                        SwiftyCompanionAPI.shared.getExpertise(id: id) { json in
-//
-//                            let expertise = JSONObject(json: json)
-//
-//                            if let new_expertise = Expertise(expertise: expertise) {
-//
-//                                self.expertises.append(new_expertise)
-//
-//                            }
-//
-//                        }
-//
-//                    }
-//
-//                }
-//
-//            }
-//
-//        }
         if _login == "amasson" {
             let uselessSkill = Skill(skill: .dictionnary([
                 "id": .integer(0),
@@ -218,11 +191,11 @@ class Student {
                 if let parent_id = project.parent_id {
                     
                     c.appendProjectToProject(project: project, id: parent_id)
-                
+                    
                 } else {
                     
                     c.projectsArray.append(project)
-                
+                    
                 }
                 
             }

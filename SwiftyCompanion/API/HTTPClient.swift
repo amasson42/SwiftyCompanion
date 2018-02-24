@@ -11,38 +11,13 @@ import UIKit
 
 class HTTPClient {
     
-    private let url42       : String = "https://api.intra.42.fr"
-    private let uid         : String = "8f804050521ce1105b67d2eb687a4f8ba8bf241c591f38cf84092547ac29cee7"
-    private let secret      : String = "8cba126ab2b9e1111f04941ae40f6ce5bcbf07579a4e6bec400035c93b1582fb"
-    private var access_token: String?
-    private var created_at  : Double?
-    private var expires_in   : Double?
-    
-//    func getForecast(city: String, completion: @escaping (_ json: [String:Any]?) -> Void) {
-//
-//        let url = URL(string: "\(openWeatherMapURLForecast)?APPID=\(openWeatherMapAPIKey)&q=\(city)&units=metric")!
-//
-//        URLSession.shared.dataTask(with: url, completionHandler: {
-//            (data, response, error) in
-//            if error != nil {
-//                completion(nil)
-//            }else{
-//                if let data = data {
-//                    do {
-//                        if let json = try JSONSerialization.jsonObject(with: data, options:[]) as? [String:Any] {
-//                            completion(json)
-//                        }
-//                    } catch let err{
-//                        print(err.localizedDescription)
-//                    }
-//                }
-//                else {
-//                    completion(nil)
-//                }
-//            }
-//        }).resume()
-//
-//    }
+    private let url42         : String = "https://api.intra.42.fr"
+    private let uid           : String = "8f804050521ce1105b67d2eb687a4f8ba8bf241c591f38cf84092547ac29cee7"
+    private let secret        : String = "8cba126ab2b9e1111f04941ae40f6ce5bcbf07579a4e6bec400035c93b1582fb"
+    private var access_token  : String?
+    private var created_at    : Double?
+    private var expires_in    : Double?
+    private var recreateTimer : Timer?
     
     func connect(completion: @escaping (_ success: Bool) -> Void) {
         let postData: [String:String] = [
@@ -59,17 +34,22 @@ class HTTPClient {
                 request.httpBody = jsonData
                 let task = URLSession.shared.dataTask(with: request) {
                     (data, response, error) in
-                    if error != nil {
-                        print("Error:", error!)
+                    if let error = error {
+                        print("Error:", error)
                     } else if let d = data {
                         do {
                             if let respJson: NSDictionary = try JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
                                 self.access_token = respJson["access_token"] as? String
                                 self.created_at = respJson["created_at"] as? Double
                                 self.expires_in = respJson["expires_in"] as? Double
+                                if let expires_in = self.expires_in {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + expires_in) {
+                                        self.connect(completion: {_ in })
+                                    }
+                                }
                                 completion(true)
                             }
-                        } catch ( _) {
+                        } catch {
                             completion(false)
                         }
                     }
@@ -80,7 +60,7 @@ class HTTPClient {
             }
         }
     }
-
+    
     func getTokenInfos(completion: @escaping (_ json: [String : Any]?) -> Void) {
         if let url = URL(string: "\(self.url42)/oauth/token/info") {
             var request = URLRequest(url: url)
@@ -196,37 +176,5 @@ class HTTPClient {
             completion(nil)
         }
     }
-
-//    func getWeather(city : String, completion: @escaping (_ json: [String : Any]?) -> Void) {
-//        let url = URL(string: "\(openWeatherMapURLCurrent)?APPID=\(openWeatherMapAPIKey)&q=\(city)&units=metric")!
-//
-//        URLSession.shared.dataTask(with: url, completionHandler: {
-//            (data, response, error) in
-//            if error != nil {
-//                completion(nil)
-//            } else {
-//                if let data = data {
-//                    do {
-//                        if let json = try JSONSerialization.jsonObject(with: data, options:[]) as? [String:Any] {
-//                            completion(json)
-//                        } else {
-//                            completion(nil)
-//                        }
-//                    } catch let err{
-//                        print(err.localizedDescription)
-//                    }
-//                }
-//            }
-//        }).resume()
-//    }
-    
-//    func downloadIcon(_ url: String) -> UIImage? {
-//        let aUrl = URL(string: "\(iconBaseUrl)\(url).png")
-//        guard let data = try? Data(contentsOf: aUrl!),
-//            let image = UIImage(data: data) else {
-//                return nil
-//        }
-//        return image
-//    }
     
 }

@@ -415,6 +415,7 @@
                                     <outlet property="expertiseView" destination="Rsg-kv-ckr" id="BCP-5e-Uoc"/>
                                     <outlet property="levelLabel" destination="Tj4-IS-Wdn" id="DZe-ba-BVP"/>
                                     <outlet property="progressLevelBar" destination="an8-da-OwR" id="Fmv-5q-QOZ"/>
+                                    <outlet property="seeProjectsButton" destination="4dA-qd-UaS" id="KXZ-l0-Cw4"/>
                                     <outlet property="skillBlurView" destination="lzf-tw-OeO" id="cSF-Ul-8QQ"/>
                                     <outlet property="skillLabel" destination="eJM-PS-uIa" id="ngk-SA-VlH"/>
                                     <outlet property="skillView" destination="WDR-UB-l8P" id="Zty-sT-dLi"/>
@@ -558,6 +559,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vsP-Fp-WZz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DgG-kf-u0g">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

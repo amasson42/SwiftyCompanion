@@ -14,6 +14,7 @@ class CursusView: UIView {
     @IBOutlet weak var cursusSelector: UISegmentedControl!
     @IBOutlet weak var achievementsView: UICollectionView!
     @IBOutlet weak var expertiseView: UITableView!
+    @IBOutlet weak var seeProjectsButton: UIButton!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var progressLevelBar: UIProgressView!
     @IBOutlet weak var skillLabel: UILabel!
@@ -33,9 +34,12 @@ class CursusView: UIView {
     }
     
     func setCursus(_ index: Int) {
-        guard let student = self.student else {
-            return
+        guard let student = self.student,
+            student.cursus.indices.contains(index) else {
+                self.seeProjectsButton.isEnabled = false
+                return
         }
+        self.seeProjectsButton.isEnabled = true
         self.levelLabel.text = "Level \(Int(student.cursus[index].level.integerPart))"
         self.progressLevelBar.progress = Float(student.cursus[index].level.decimalPart)
         self.skillView.skills = student.cursus[index].skillsArray
